@@ -11,6 +11,8 @@ require_relative "miyagi/version"
 module Miyagi
   extend Dry::Configurable
 
+  GEM_PATH = Pathname.new(__dir__).join("..").realpath.freeze
+
   class Error < StandardError; end
 
   autoload :Memory, "miyagi/memory"
