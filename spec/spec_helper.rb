@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+require "debug"
 require "miyagi"
+
+Miyagi.config.file_system = Dry::Files.new(memory: true)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
