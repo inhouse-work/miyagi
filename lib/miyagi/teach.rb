@@ -9,7 +9,7 @@ module Miyagi
     end
 
     def call
-      Pathname.glob("content/**/*.md").each do |path|
+      Pathname.glob("content/**/*.md").shuffle.each do |path|
         timestamp = @memory.read(path.to_s)
 
         if review?(timestamp)
