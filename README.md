@@ -25,10 +25,19 @@ RSpec.configure do |config|
     content = Miyagi.teach
     next unless content
 
-    puts content
+    puts "\n#{content}"
   end
 end
 ```
+
+You can configure the path Miyagi will use to remember what you have already
+seen by setting the `memory_path`
+
+```ruby
+Miyagi.memory_path = Pathname.new("/home/you/.miyagi/something.txt")
+```
+
+By default it will use `~/.miyagi/memory.txt`.
 
 ## Development
 
